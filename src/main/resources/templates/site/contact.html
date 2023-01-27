@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/LayoutPadrao">
+	
+<head>
+	<title>RastipUi</title>
+</head> 
+<body>
+	<section layout:fragment="conteudo">
+	<div class="row panelExterno">
+	  <div class="col-md-12 ui-g-12 col-sm-12">
+	      <small style="font-size: 123%;"><strong>Entre em contato</strong></small>
+	      <p>Preencha o formulário abaixo que contactamos você.</p>
+	  </div>
+	  <div class="col-md-6 col-xs-12 col-sm-6">
+	    <div class="form-group">
+	      <input type="text" name="contato.nome" class="form-control" placeholder="Nome"></input>
+	    </div>
+	    <div class="form-group">
+	      <input type="email" name="contato.email"  class="form-control" placeholder="E-mail"></input>
+	    </div>
+	    <div class="form-group">
+	      <input type="text" name="contato.nrTelefoneFormatter" maxlength="15" class="form-control mskTel" placeholder="Telefone"></input>
+	    </div>
+	    <div class="form-group">
+	      <input type="text" name="contato.assunto" class="form-control" placeholder="Assunto"></input>
+	    </div>
+	  </div>
+	  <div class="col-md-6 col-xs-12 col-sm-6">
+	    <div class="form-group">
+	      <textarea name="contato.mensagem" class="form-control" rows="8" placeholder="Mensagem"></textarea>
+	    </div>
+	  </div>
+	  <div class="col-md-6 ui-g-12 col-sm-6 text-right">
+	        <button type="button" label="Enviar" icon="fa-sign-in" class="ui-button-info float-r">Enviar</button>
+	  </div>
+	</div>
+	</section>
+</body>
+
+</html>

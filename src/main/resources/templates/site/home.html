@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/LayoutPadrao">
+	
+
+<head>
+<title>RastipUi</title>
+<style>
+.mt-60 {
+  margin-top: 60px;
+}
+
+.pd-10 {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.pd-left-topo {
+  padding-left: 550px;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-family: cursive;
+    padding-left: 50px;
+    font-size: 30px;
+    padding: 0rem 2rem !important;
+}
+
+.bemVindo{
+  padding-right: 20px;
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+	<section layout:fragment="conteudo">
+		<footer class="footer">
+  <div>
+    <div class="ui-g-4 col-md-4 col-sm-4">
+      <h4></h4>
+    </div>
+    <div class="ui-g-12 col-md-12 col-sm-12" style="text-align: center">
+      <img th:src="@{/layout/img/map.svg}" style="border-radius:50% ; margin-bottom: 5px" width="220" height="220" alt=""></img>
+      <h4>
+        <strong>Solução</strong>
+      </h4>
+      <p>Focamos nossas soluções em gerar resultados para seu negócio. Garantir a segurança da origem do seu Produto e proporcionar
+        informações consistentes aos seus clientes, é a nossa missão.</p>
+    </div>
+    <div class="ui-g-4 col-md-4 col-sm-4">
+      <h4></h4>
+    </div>
+
+    <div class="ui-g-12 col-md-12 col-sm-12" style="background: aliceblue;">
+      <div class="ui-g-12 col-md-6" style="padding-left: 60px">
+        <h3>Conheça o
+          <strong>RastIp</strong>
+        </h3>
+        <div class="row">
+
+          <p style="text-align: justify">O
+            <strong>RastIp</strong> é um Sistema de Rastreio de Informações de Produtos, com objetivo de informar e facilitar ao
+            consumidor, a origem e cultivo do produto, assim tendo uma maior confiança para adiquiri-lo.</p>
+          <p style="text-align: justify">O acesso ao
+            <strong>RastIp</strong> é simples, basta criar um login simples e acessá-lo. O Sistema é totalmente online, não necessitando
+            de instalações de software auxiliares, e nem de aparelhos com requisitos de configurações.</p>
+
+          <p style="text-align: justify">As principais funcionalidades do sistema são:</p>
+          <ul>
+            <li>Cadastro de produto, produtor e endereço da produção.</li>
+            <li>Impressão de etiquetas, com as informações necessárias para o rastreio do produto.</li>
+            <li>Gerador de Qrcode, para acesso ao rastreio via smartphone.</li>
+            <li>Exibição das informações de origem do produto via google Maps.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ui-g-12 col-md-6" style="text-align: center">
+        <h4></h4>
+      </div>
+
+    </div>
+    <div class="col-md-12 ui-g-12 col-sm-12">
+      <p-footer>
+        <span style="font-size: 10px" class="ui-inputgroup-addon">
+          <i class="fa fa-registered"></i>RASTIP - Tecnology</span>
+      </p-footer>
+    </div>
+  </div>
+</footer>
+	</section>
+</body>
+
+</html>

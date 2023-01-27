@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="etiqueta_item" pageWidth="277" pageHeight="802" columnWidth="277" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e1eb46f7-be19-4728-9810-1abeb22d8954">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="qrcodecontent" class="java.lang.String"/>
+	<field name="endereco.cidade" class="java.lang.String"/>
+	<field name="produtor.nome" class="java.lang.String"/>
+	<field name="produtor.telefone" class="java.lang.String"/>
+	<field name="produtor.email" class="java.lang.String"/>
+	<field name="produtor.documento" class="java.lang.String"/>
+	<field name="produto.descricao" class="java.lang.String"/>
+	<field name="produto.variedade" class="java.lang.String"/>
+	<field name="dataProducao" class="java.util.Date"/>
+	<field name="lote" class="java.lang.String"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<detail>
+		<band height="50">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="50" height="50" uuid="b52bbd31-d62a-4def-a906-3970aa124820"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+     new com.google.zxing.qrcode.QRCodeWriter().encode(
+         $F{qrcodecontent},
+         com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="50" y="0" width="227" height="10" uuid="2e3e7729-32fc-4b56-92f9-fa5f1d9de3e9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto.descricao} + " " + $F{produto.variedade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="9" width="15" height="10" uuid="7f6c795b-3849-4743-9fe0-3d4a3080db83"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Lote:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="9" width="29" height="10" uuid="6cd13166-6dff-4e97-a027-7eaecc938347"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="9" width="22" height="10" uuid="48542e43-6c2e-4b7a-b160-b4b6ab6304dd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Qtd.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="18" width="30" height="10" uuid="383af990-366e-46ee-b94a-cc31fce96b2b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[CPF/CNPJ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="18" width="95" height="10" uuid="d10bb96a-ff5e-46f4-91bd-e99b823008d6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="18" width="43" height="10" uuid="de7f7179-e49c-44fb-90ec-ee264f6ba7b0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Telefone:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="18" width="59" height="10" uuid="a5d52578-b4d8-4e3f-b7ed-49a6e4454f57"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[E-mail:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="38" width="30" height="10" uuid="c91ee752-5f9f-4cbf-b671-80674260f3e9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="65" y="9" width="45" height="10" uuid="a6c581d4-705d-47a8-9a44-e7371ce531aa"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lote}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="9" width="79" height="10" uuid="710cab72-ce31-4227-8fa5-3cc04321ee14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataProducao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="9" width="37" height="10" uuid="43fb8076-eb26-4aee-af81-b943ef99640f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="38" width="197" height="10" uuid="1b3952c5-42e7-42ed-b0ba-d87c14bb914e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco.cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="28" width="59" height="10" uuid="dc306e7c-c8a1-4ef4-b69d-f7212cc9a5e4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produtor.email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="28" width="43" height="10" uuid="bd1b806a-2e66-448f-809e-60403dd15f52"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produtor.telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="28" width="30" height="10" uuid="40f2bf04-1113-4bbd-ad35-3b43bbd4b65b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produtor.documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="28" width="95" height="10" uuid="c8a1093f-f410-4a6e-bdf2-00da94b8052a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produtor.nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
